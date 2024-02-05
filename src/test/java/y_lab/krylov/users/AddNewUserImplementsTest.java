@@ -8,9 +8,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import y_lab.krylov.database.GetConnection;
 import static org.assertj.db.api.Assertions.assertThat;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Properties;
 
 
 class AddNewUserImplementsTest {
@@ -19,11 +25,27 @@ class AddNewUserImplementsTest {
     String insertNewUser;
     Connection connection;
     PreparedStatement statement;
+    static String URL;
+    static  String LOGIN;
+    static String PASSWORD;
+    Properties properties;
+
     int size;
     @BeforeEach
     @DisplayName("add new user in database")
     void setUp() throws SQLException {
-        source = new Source("jdbc:postgresql://localhost:777/postgres", "username", "password");
+        try( FileInputStream fis = new FileInputStream("src/main/resources/application.properties")) {
+            properties = new Properties();
+            properties.load(fis);
+            URL = properties.getProperty("URL");
+            LOGIN = properties.getProperty("LOGIN");
+            PASSWORD = properties.getProperty("PASSWORD");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        source = new Source(URL, LOGIN, PASSWORD);
         table = new Table(source, "users");
         size = table.getRowsList().size();
         insertNewUser = "INSERT INTO users (login, password, name, age, city) values(?,?,?,?,?)";

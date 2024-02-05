@@ -28,21 +28,14 @@ public class SetReadingsImplements implements SetReadings{
         try {
             PreparedStatement statement = connection.prepareStatement(insertNewUser);
             statement.setInt(1, userId);
-            System.out.println("Input hot_waters");
             int hot_waters = in.nextInt();
             statement.setInt(2, hot_waters);
-            System.out.println("Input cold_waters");
             int cold_waters = in.nextInt();
             statement.setInt(3, cold_waters);
-            System.out.println("Input heating");
             int heating = in.nextInt();
             statement.setInt(4, heating);
-            System.out.println("Input now date");
-            System.out.println("Input day");
             int day = in.nextInt();
-            System.out.println("Input month");
             int month = in.nextInt();
-            System.out.println("Input year");
             int year = in.nextInt();
             LocalDate date = LocalDate.of(year, month, day);
 

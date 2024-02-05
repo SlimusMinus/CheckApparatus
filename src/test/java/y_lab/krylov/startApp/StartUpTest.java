@@ -1,21 +1,21 @@
 package y_lab.krylov.startApp;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.mockito.Mockito;
 
-import static org.assertj.db.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 
 class StartUpTest {
-    StartUp startUp;
-
-    @BeforeEach
-    void setUp(){
-        startUp = new StartUp();
+    @BeforeAll
+    static void setUp(){
+       StartUp.choice = 1;
     }
-    @Test
-    void getChoice() {
 
+    @Test
+    @DisplayName("checking input value")
+    void getChoice() {
+        assertThat(StartUp.choice).isEqualTo(1);
     }
 }

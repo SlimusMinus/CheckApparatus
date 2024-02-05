@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @version 1.0*/
 public class App {
     public static void main(String[] args) {
-        DataBase.startDatabase();
+        //DataBase.startDatabase();
         Scanner in = new Scanner(System.in);
         ShowReadings showReadings = new ShowReadingsImplemets();
         int exit = 0;

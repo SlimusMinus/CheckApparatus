@@ -12,10 +12,12 @@ import java.sql.Statement;
 public class GetAllUsersImplements implements GetAllUsers{
     @Override
     public ResultSet getAllUsers() throws SQLException {
-        Connection connection = GetConnection.getConnection();
-        String allUsers = "SELECT * FROM users";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(allUsers);
-        return resultSet;
+        try(Connection connection = GetConnection.getConnection()){
+            String allUsers = "SELECT * FROM users";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(allUsers);
+            return resultSet;
+
+        }
     }
 }

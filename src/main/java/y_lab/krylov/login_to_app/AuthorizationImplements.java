@@ -22,10 +22,6 @@ public class AuthorizationImplements implements Authorization {
      * user id from database*/
     private static int user_id;
 
-    public String getLogin() {
-        return login;
-    }
-
     public void setLogin(String login) {
         this.login = login;
     }
@@ -42,7 +38,8 @@ public class AuthorizationImplements implements Authorization {
         return user_id;
     }
 
-    Scanner in = new Scanner(System.in);
+    private Scanner in = new Scanner(System.in);
+    private GetAllUsers getAllUsers = new GetAllUsersImplements();
 
     @Override
     public void input_data() {
@@ -54,7 +51,7 @@ public class AuthorizationImplements implements Authorization {
 
     @Override
     public boolean IsAuthorization() {
-        GetAllUsers getAllUsers = new GetAllUsersImplements();
+
         try {
             ResultSet resultSet = getAllUsers.getAllUsers();
             while (resultSet.next()) {
