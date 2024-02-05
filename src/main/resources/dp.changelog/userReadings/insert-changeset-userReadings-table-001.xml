@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        logicalFilePath="db.changelog/userReadings/">
+
+    <changeSet id="88888" author="Alexandr_Krylov">
+        <insert  tableName="readings"  >
+            <column name="id_user" value="1"/>
+            <column name="date_readings" value="2023-11-25"/>
+            <column name="hot_water" value="37"/>
+            <column name="cold_water" value="18"/>
+            <column name="heating" value="23"/>
+        </insert>
+
+        <insert  tableName="readings" >
+            <column name="id_user" value="1"/>
+            <column name="date_readings" value="2023-12-15"/>
+            <column name="hot_water" value="15"/>
+            <column name="cold_water" value="18"/>
+            <column name="heating" value="78"/>
+        </insert>
+
+        <insert  tableName="readings" >
+            <column name="id_user" value="1"/>
+            <column name="date_readings" value="2024-02-01"/>
+            <column name="hot_water" value="137"/>
+            <column name="cold_water" value="118"/>
+            <column name="heating" value="293"/>
+        </insert>
+
+        <insert  tableName="readings" >
+            <column name="id_user" value="2"/>
+            <column name="date_readings" value="2024-01-02"/>
+            <column name="hot_water" value="44"/>
+            <column name="cold_water" value="55"/>
+            <column name="heating" value="66"/>
+        </insert>
+
+        <insert  tableName="readings" >
+            <column name="id_user" value="2"/>
+            <column name="date_readings" value="2023-12-12"/>
+            <column name="hot_water" value="44"/>
+            <column name="cold_water" value="55"/>
+            <column name="heating" value="66"/>
+        </insert>
+        <insert  tableName="readings" >
+            <column name="id_user" value="2"/>
+            <column name="date_readings" value="2023-11-11"/>
+            <column name="hot_water" value="44"/>
+            <column name="cold_water" value="55"/>
+            <column name="heating" value="66"/>
+        </insert>
+        <insert  tableName="readings" >
+            <column name="id_user" value="3"/>
+            <column name="date_readings" value="2023-08-08"/>
+            <column name="hot_water" value="144"/>
+            <column name="cold_water" value="232"/>
+            <column name="heating" value="111"/>
+        </insert>
+        <insert  tableName="readings" >
+            <column name="id_user" value="3"/>
+            <column name="date_readings" value="2023-05-05"/>
+            <column name="hot_water" value="34"/>
+            <column name="cold_water" value="453"/>
+            <column name="heating" value="88"/>
+        </insert>
+        <insert  tableName="readings" >
+            <column name="id_user" value="3"/>
+            <column name="date_readings" value="2024-01-08"/>
+            <column name="hot_water" value="88"/>
+            <column name="cold_water" value="963"/>
+            <column name="heating" value="12"/>
+        </insert>
+        <insert  tableName="readings" >
+            <column name="id_user" value="4"/>
+            <column name="date_readings" value="2024-02-02"/>
+            <column name="hot_water" value="55"/>
+            <column name="cold_water" value="566"/>
+            <column name="heating" value="66"/>
+        </insert>
+        <insert  tableName="readings" >
+            <column name="id_user" value="4"/>
+            <column name="date_readings" value="2023-10-10"/>
+            <column name="hot_water" value="222"/>
+            <column name="cold_water" value="55"/>
+            <column name="heating" value="34"/>
+        </insert>
+        <insert  tableName="readings" >
+            <column name="id_user" value="4"/>
+            <column name="date_readings" value="2024-01-01"/>
+            <column name="hot_water" value="45"/>
+            <column name="cold_water" value="333"/>
+            <column name="heating" value="12"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
