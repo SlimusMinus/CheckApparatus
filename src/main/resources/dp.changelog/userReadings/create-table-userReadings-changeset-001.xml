@@ -1,0 +1,45 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+
+
+    <changeSet author="Alexander_Krylov" id="77777">
+        <createTable tableName="readings" >
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="reading_pkey"/>
+            </column>
+            <column name="id_user" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_readings" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hot_water" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cold_water" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="heating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Alexander_Krylov" id="seq_readings_table">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1"
+                        maxValue="9223372" minValue="1" sequenceName="db_readings_id_seq" startValue="1"/>
+    </changeSet>
+
+    <changeSet id="fk_user_db_readings" author="Alexander_Krylov">
+        <addForeignKeyConstraint baseTableName="readings"
+                                 baseColumnNames="id_user"
+                                 constraintName="fk_user_db_readings"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+    </changeSet>
+</databaseChangeLog>

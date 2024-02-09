@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        logicalFilePath="dp.changelog">
+
+
+    <include file="user/001-create-changeset-User-table.xml" relativeToChangelogFile="true"/>
+    <include file="user/001-insert-changeset-User-table.xml" relativeToChangelogFile="true"/>
+    <include file="userReadings/create-table-userReadings-changeset-001.xml" relativeToChangelogFile="true"/>
+    <include file="userReadings/insert-changeset-userReadings-table-001.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
